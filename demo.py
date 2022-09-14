@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 from tqdm import tqdm
 from transformers import BertTokenizer
-from keras.models import load_model
+from tensorflow import keras
 from flask import Flask
 from flask import request
 from flask import render_template
@@ -18,7 +18,7 @@ from demo_fuzzy_sentence import get_fuzzy_sentence_top_n
 MODEL_NAME = "static/swedClinBert"
 icd_desc_f = 'static/icd/gastro_se_blk.csv'
 choices = pd.read_csv(icd_desc_f, sep=',', header=0)
-modelx = load_model('static/model')
+modelx = keras.models.load_model('static/model')
 
 label_dict = ['K209', 'K210', 'K219', 'K222', 'K250', 'K251', 'K253', 'K259', 'K260', 'K261', 'K263', 'K279', 'K295',
               'K297', 'K298', 'K299', 'K309', 'K310', 'K317', 'K351', 'K352', 'K353', 'K358', 'K359', 'K369', 'K379',
@@ -37,7 +37,7 @@ tokenizer = BertTokenizer.from_pretrained(MODEL_NAME,
                                           pad_to_max_length=True)
 
 
-def tokenize(sentences, tokenizer):
+def tokenize(sentences):
     input_ids, input_masks, input_segments = [], [], []
     for sentence in tqdm(sentences):
         inputs = tokenizer.encode_plus(sentence,
@@ -57,7 +57,7 @@ def get_top_n(clinical_note):
     if not isinstance(clinical_note, str): return []
     if not clinical_note: return []
     fuzzy_top_n = get_fuzzy_sentence_top_n(clinical_note, choices)
-    clinical_note = tokenize([clinical_note], tokenizer)
+    clinical_note = tokenize([clinical_note])
     y_test_probs = modelx.predict(clinical_note)
     bert_top_n = [x for _, x in sorted(zip(y_test_probs[0], label_dict), key=lambda pair: pair[0], reverse=True)][:5]
 

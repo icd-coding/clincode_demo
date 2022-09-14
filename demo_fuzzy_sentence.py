@@ -13,10 +13,10 @@ import string
 from tqdm import tqdm
 
 tqdm.pandas()
-import spacy
+#import spacy
 
-spacy.prefer_gpu()
-nlp = spacy.load('sv_core_news_lg')
+# spacy.prefer_gpu()
+# nlp = spacy.load('sv_core_news_lg')
 # nltk.download('stopwords')
 stop_words = set(stopwords.words('swedish'))
 stemmer = SnowballStemmer("swedish")
