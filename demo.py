@@ -78,7 +78,7 @@ def get_finnkode():
         count = 0
         subs = []
         for sub_t in subtitles:
-            subs.append(['teksLeonardo Da Vinci kunstwerket' + str(count), sub_t.text])
+            subs.append(['tekst' + str(count), sub_t.text])
             count += 1
         record.append([['code', code.text + ' | ' + title.text], subs])
     return record
