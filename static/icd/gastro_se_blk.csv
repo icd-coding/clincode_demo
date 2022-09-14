@@ -1,0 +1,440 @@
+description,code,block
+Avsaknad av tänder genom utebliven tandutveckling,K000,K00-K14
+Övertaliga tänder,K001,K00-K14
+Avvikelser i tändernas storlek och form,K002,K00-K14
+Fläckiga tänder (emaljopaciteter),K003,K00-K14
+Störningar i tandbildningen,K004,K00-K14
+Ärftliga rubbningar i tandvävnaderna som ej klassificeras på annan plats,K005,K00-K14
+Rubbningar i tandframbrottet,K006,K00-K14
+Besvär vid tandframbrottet,K007,K00-K14
+Andra specificerade rubbningar i tandutvecklingen,K008,K00-K14
+"Rubbning i tändernas utveckling och frambrott, ospecificerad",K009,K00-K14
+Retinerade tänder utan frambrottshinder,K010,K00-K14
+Retinerade tänder med frambrottshinder,K011,K00-K14
+Karies begränsad till emaljen,K020,K00-K14
+Karies i dentinet,K021,K00-K14
+Karies i cementet,K022,K00-K14
+Avstannad tandkaries,K023,K00-K14
+Odontoklasi,K024,K00-K14
+Karies med exponerad pulpa,K025,K00-K14
+Annan specificerad tandkaries,K028,K00-K14
+"Tandkaries, ospecificerad",K029,K00-K14
+Nedslitning av tänderna (attrition),K030,K00-K14
+Abrasion av tänderna,K031,K00-K14
+Tanderosion,K032,K00-K14
+Patologisk resorption av tänder,K033,K00-K14
+Cementpålagring,K034,K00-K14
+Ankylos av tänder,K035,K00-K14
+Tandbeläggningar,K036,K00-K14
+Posteruptiva färgförändringar av tändernas hårdvävnader,K037,K00-K14
+Andra specificerade sjukdomar i tändernas hårdvävnader,K038,K00-K14
+"Sjukdom i tändernas hårdvävnader, ospecificerad",K039,K00-K14
+Pulpit,K040,K00-K14
+Pulpanekros,K041,K00-K14
+Pulpadegeneration,K042,K00-K14
+Sekundär dentinbildning i pulpan,K043,K00-K14
+Akut periradikulär osteit med ursprung i pulpan,K044,K00-K14
+Kronisk periradikulär osteit,K045,K00-K14
+Periradikulär abscess med fistel,K046,K00-K14
+Periradikulär abscess utan fistel,K047,K00-K14
+Radikulär cysta (rotcysta),K048,K00-K14
+Andra och ospecificerade sjukdomar i pulpan och de periradikulära vävnaderna,K049,K00-K14
+Akut gingivit,K050,K00-K14
+Kronisk gingivit,K051,K00-K14
+Akut parodontit,K052,K00-K14
+Kronisk parodontit,K053,K00-K14
+Parodontos,K054,K00-K14
+Andra parodontala sjukdomar,K055,K00-K14
+"Parodontal sjukdom, ospecificerad",K056,K00-K14
+Gingivaretraktion,K060,K00-K14
+Gingival hyperplasi,K061,K00-K14
+Traumatiska skador i gingiva och tandlöst alveolarutskott,K062,K00-K14
+Andra specificerade sjukdomar i gingiva och tandlöst alveolarutskott,K068,K00-K14
+"Sjukdom i gingiva och tandlöst alveolarutskott, ospecificerad",K069,K00-K14
+Uttalade anomalier i käkarnas storlek,K070,K00-K14
+Anomalier i förhållandet mellan käke och skallbas,K071,K00-K14
+Anomalier i förhållandet mellan tandbågarna,K072,K00-K14
+Anomalier i tändernas ställning,K073,K00-K14
+"Malocklusion, ospecificerad",K074,K00-K14
+Onormal funktion hos tänder och käkar,K075,K00-K14
+Rubbningar i käkleden,K076,K00-K14
+Andra specificerade dentofaciala anomalier,K078,K00-K14
+"Tand- och käkmissbildningar med malocklusion, ospecificerade",K079,K00-K14
+Förlust av tänder på grund av systemsjukdom,K080,K00-K14
+"Förlust av tänder som följd av olycksfall, extraktion eller parodontal sjukdom",K081,K00-K14
+Atrofi av tandlöst alveolarutskott,K082,K00-K14
+Retinerad tandrot (rotrest),K083,K00-K14
+Andra specificerade sjukdomar i tänderna och omgivande vävnader,K088,K00-K14
+"Sjukdomar och tillstånd i tänderna och omgivande vävnader, ospecificerade",K089,K00-K14
+Odontogena utvecklingscystor,K090,K00-K14
+Icke odontogena utvecklingscystor i mun- och käkregionen,K091,K00-K14
+Andra cystor i käken,K092,K00-K14
+Andra specificerade cystor i mun- och käkregionen som ej klassificeras på annan plats,K098,K00-K14
+"Cysta i mun- och käkregionen, ospecificerad",K099,K00-K14
+Utvecklingssjukdomar i käkarna,K100,K00-K14
+Centralt jättecellsgranulom,K101,K00-K14
+Inflammatoriska tillstånd i käkarna,K102,K00-K14
+Alveolit i käkben,K103,K00-K14
+Andra specificerade sjukdomar i käkarna,K108,K00-K14
+"Sjukdom i käkarna, ospecificerad",K109,K00-K14
+Spottkörtelatrofi,K110,K00-K14
+Spottkörtelhypertrofi,K111,K00-K14
+Spottkörtelinflammation,K112,K00-K14
+Spottkörtelabscess,K113,K00-K14
+Spottkörtelfistel,K114,K00-K14
+Spottsten,K115,K00-K14
+Mukocele,K116,K00-K14
+Rubbad spottkörtelfunktion,K117,K00-K14
+Andra specificerade sjukdomar i spottkörtlarna,K118,K00-K14
+"Sjukdom i spottkörtel, ospecificerad",K119,K00-K14
+Recidiverande afte,K120,K00-K14
+Andra former av stomatit,K121,K00-K14
+Inflammation och abscess i munregionen,K122,K00-K14
+Oral mukosit (ulcerativ),K123,K00-K14
+Sjukdomar i läpparna,K130,K00-K14
+Kind- och läppbitning,K131,K00-K14
+Leukoplaki och andra störningar i munhålans epitel inklusive tungan,K132,K00-K14
+Hårig leukoplaki,K133,K00-K14
+Granulom och granulomliknande tillstånd i munslemhinnan,K134,K00-K14
+Submukös fibros i munnen,K135,K00-K14
+Irritationshyperplasi i munslemhinnan,K136,K00-K14
+Andra och ospecificerade förändringar i munslemhinnan,K137,K00-K14
+Glossit,K140,K00-K14
+Lingua geographica,K141,K00-K14
+Glossitis rhombica mediana,K142,K00-K14
+Papillhypertrofi på tungan,K143,K00-K14
+Atrofi av tungpapillerna,K144,K00-K14
+Skrotaltunga,K145,K00-K14
+Tungsmärtor,K146,K00-K14
+Andra specificerade sjukdomar i tungan,K148,K00-K14
+"Sjukdom i tungan, ospecificerad",K149,K00-K14
+Esofagit (inflammation i matstrupen),K209,K20-K31
+Gastroesofageal refluxsjukdom med esofagit,K210,K20-K31
+Gastroesofageal refluxsjukdom utan esofagit,K219,K20-K31
+Achalasia cardiae,K220,K20-K31
+Sår i esofagus,K221,K20-K31
+Obstruktion av esofagus,K222,K20-K31
+Perforation av esofagus,K223,K20-K31
+Esofagusdyskinesi,K224,K20-K31
+"Esofagusdivertikel, förvärvad",K225,K20-K31
+Gastroesofagealt lacerationssyndrom med blödning,K226,K20-K31
+Barretts esofagus,K227,K20-K31
+Andra specificerade sjukdomar i esofagus,K228,K20-K31
+"Sjukdom i esofagus, ospecificerad",K229,K20-K31
+Tuberkulös esofagit (A18.8),K230,K20-K31
+Megaesofagus vid Chagas sjukdom (B57.3),K231,K20-K31
+Förändringar i esofagus vid andra sjukdomar som klassificeras på annan plats,K238,K20-K31
+Sår i magsäcken-Akut med blödning,K250,K20-K31
+Sår i magsäcken-Akut med perforation,K251,K20-K31
+Sår i magsäcken-Akut med både blödning och perforation,K252,K20-K31
+Sår i magsäcken-Akut utan blödning eller perforation,K253,K20-K31
+Sår i magsäcken-Kroniskt eller ospecificerat med blödning,K254,K20-K31
+Sår i magsäcken-Kroniskt eller ospecificerat med perforation,K255,K20-K31
+Sår i magsäcken-Kroniskt eller ospecificerat med både blödning och perforation,K256,K20-K31
+Sår i magsäcken-Kroniskt utan blödning eller perforation,K257,K20-K31
+Sår i magsäcken-Ospecificerat som akut eller kronisk utan blödning eller perforation,K259,K20-K31
+Sår i tolvfingertarmen-Akut med blödning,K260,K20-K31
+Sår i tolvfingertarmen-Akut med perforation,K261,K20-K31
+Sår i tolvfingertarmen-Akut med både blödning och perforation,K262,K20-K31
+Sår i tolvfingertarmen-Akut utan blödning eller perforation,K263,K20-K31
+Sår i tolvfingertarmen-Kroniskt eller ospecificerat med blödning,K264,K20-K31
+Sår i tolvfingertarmen-Kroniskt eller ospecificerat med perforation,K265,K20-K31
+Sår i tolvfingertarmen-Kroniskt eller ospecificerat med både blödning och perforation,K266,K20-K31
+Sår i tolvfingertarmen-Kroniskt utan blödning eller perforation,K267,K20-K31
+Sår i tolvfingertarmen-Ospecificerat som akut eller kronisk utan blödning eller perforation,K269,K20-K31
+Sår i magsäcken eller tolvfingertarmen utan angiven lokalisation-Akut med blödning,K270,K20-K31
+Sår i magsäcken eller tolvfingertarmen utan angiven lokalisation-Akut med perforation,K271,K20-K31
+Sår i magsäcken eller tolvfingertarmen utan angiven lokalisation-Akut med både blödning och perforation,K272,K20-K31
+Sår i magsäcken eller tolvfingertarmen utan angiven lokalisation-Akut utan blödning eller perforation,K273,K20-K31
+Sår i magsäcken eller tolvfingertarmen utan angiven lokalisation-Kroniskt eller ospecificerat med blödning,K274,K20-K31
+Sår i magsäcken eller tolvfingertarmen utan angiven lokalisation-Kroniskt eller ospecificerat med perforation,K275,K20-K31
+Sår i magsäcken eller tolvfingertarmen utan angiven lokalisation-Kroniskt eller ospecificerat med både blödning och perforation,K276,K20-K31
+Sår i magsäcken eller tolvfingertarmen utan angiven lokalisation-Kroniskt utan blödning eller perforation,K277,K20-K31
+Sår i magsäcken eller tolvfingertarmen utan angiven lokalisation-Ospecificerat som akut eller kronisk utan blödning eller perforation,K279,K20-K31
+Recidivsår efter gastroenterostomi (operation av magsäcken)-Akut med blödning,K280,K20-K31
+Recidivsår efter gastroenterostomi (operation av magsäcken)-Akut med perforation,K281,K20-K31
+Recidivsår efter gastroenterostomi (operation av magsäcken)-Akut med både blödning och perforation,K282,K20-K31
+Recidivsår efter gastroenterostomi (operation av magsäcken)-Akut utan blödning eller perforation,K283,K20-K31
+Recidivsår efter gastroenterostomi (operation av magsäcken)-Kroniskt eller ospecificerat med blödning,K284,K20-K31
+Recidivsår efter gastroenterostomi (operation av magsäcken)-Kroniskt eller ospecificerat med perforation,K285,K20-K31
+Recidivsår efter gastroenterostomi (operation av magsäcken)-Kroniskt eller ospecificerat med både blödning och perforation,K286,K20-K31
+Recidivsår efter gastroenterostomi (operation av magsäcken)-Kroniskt utan blödning eller perforation,K287,K20-K31
+Recidivsår efter gastroenterostomi (operation av magsäcken)-Ospecificerat som akut eller kronisk utan blödning eller perforation,K289,K20-K31
+Akut hemorragisk gastrit,K290,K20-K31
+Annan akut gastrit,K291,K20-K31
+Gastrit orsakad av alkohol,K292,K20-K31
+Kronisk ytlig gastrit,K293,K20-K31
+Kronisk atrofisk gastrit,K294,K20-K31
+"Kronisk gastrit, ospecificerad",K295,K20-K31
+Annan specificerad gastrit,K296,K20-K31
+"Gastrit, ospecificerad",K297,K20-K31
+Duodenit,K298,K20-K31
+"Gastroduodenit, ospecificerad",K299,K20-K31
+Funktionell dyspepsi,K309,K20-K31
+Akut dilatation av magsäcken,K310,K20-K31
+Hypertrofisk pylorusstenos hos vuxen,K311,K20-K31
+Timglasformad striktur och stenos av magsäcken,K312,K20-K31
+Pylorospasm som ej klassificeras på annan plats,K313,K20-K31
+Divertikel i magsäcken,K314,K20-K31
+Obstruktion av tolvfingertarmen,K315,K20-K31
+Fistel i magsäcken och tolvfingertarmen,K316,K20-K31
+Polyp i magsäcken och tolvfingertarmen,K317,K20-K31
+Andra specificerade sjukdomar i magsäcken och tolvfingertarmen,K318,K20-K31
+"Sjukdom i magsäcken och tolvfingertarmen, ospecificerad",K319,K20-K31
+Akut appendicit med generaliserad peritonit,K352,K35-K38
+Akut appendicit med lokaliserad peritonit,K353,K35-K38
+Annan och ospecificerad akut appendicit,K358,K35-K38
+Annan appendicit,K369,K35-K38
+Ospecificerad appendicit,K379,K35-K38
+Lymfoid hyperplasi av appendix,K380,K35-K38
+Appendixstenar,K381,K35-K38
+Divertikel i appendix,K382,K35-K38
+Appendixfistel,K383,K35-K38
+Andra specificerade sjukdomar i appendix,K388,K35-K38
+"Sjukdom i appendix, ospecificerad",K389,K35-K38
+Inklämt dubbelsidigt ljumskbråck utan gangrän,K400,K40-K46
+Dubbelsidigt ljumskbråck med gangrän,K401,K40-K46
+Dubbelsidigt ljumskbråck utan inklämning eller gangrän,K402,K40-K46
+"Ensidigt eller ospecificerat ljumskbråck med inklämning, utan gangrän",K403,K40-K46
+Ensidigt eller ospecificerat ljumskbråck med gangrän,K404,K40-K46
+Ensidigt eller ospecificerat ljumskbråck utan inklämning eller gangrän,K409,K40-K46
+Inklämt dubbelsidigt femoralbråck utan gangrän,K410,K40-K46
+Dubbelsidigt femoralbråck med gangrän,K411,K40-K46
+Dubbelsidigt femoralbråck utan inklämning eller gangrän,K412,K40-K46
+"Ensidigt eller ospecificerat femoralbråck med inklämning, utan gangrän",K413,K40-K46
+Ensidigt eller ospecificerat femoralbråck med gangrän,K414,K40-K46
+Ensidigt eller ospecificerat femoralbråck utan inklämning eller gangrän,K419,K40-K46
+Inklämt navelbråck utan gangrän,K420,K40-K46
+Navelbråck med gangrän,K421,K40-K46
+Navelbråck utan inklämning eller gangrän,K429,K40-K46
+Inklämt ärrbråck utan gangrän,K430,K40-K46
+Ärrbråck med gangrän,K431,K40-K46
+Ärrbråck utan inklämning eller gangrän,K432,K40-K46
+Inklämt parastomalt bråck utan gangrän,K433,K40-K46
+Parastomalt bråck med gangrän,K434,K40-K46
+Parastomalt bråck utan inklämning eller gangrän,K435,K40-K46
+Annat och ospecificerat inklämt främre bukväggsbråck utan gangrän,K436,K40-K46
+Annat och ospecificerat främre bukväggsbråck med gangrän,K437,K40-K46
+Annat och ospecificerat främre bukväggsbråck utan inklämning eller gangrän,K439,K40-K46
+Inklämt diafragmabråck utan gangrän,K440,K40-K46
+Diafragmabråck med gangrän,K441,K40-K46
+Diafragmabråck utan inklämning eller gangrän,K449,K40-K46
+"Annat specificerat bukbråck med inklämning, utan gangrän",K450,K40-K46
+Annat specificerat bukbråck med gangrän,K451,K40-K46
+Annat specificerat bukbråck utan inklämning eller gangrän,K458,K40-K46
+"Ospecificerat bukbråck med inklämning, utan gangrän",K460,K40-K46
+Ospecificerat bukbråck med gangrän,K461,K40-K46
+Ospecificerat bukbråck utan inklämning eller gangrän,K469,K40-K46
+Crohns sjukdom [regional enterit] i tunntarmen,K500,K50-K52
+Crohns sjukdom [regional enterit] i tjocktarmen,K501,K50-K52
+Annan Crohns sjukdom,K508,K50-K52
+"Crohns sjukdom, ospecificerad",K509,K50-K52
+Total ulcerös (kronisk) kolit,K510,K50-K52
+Ulcerös (kronisk) proktit,K512,K50-K52
+Ulcerös (kronisk) proktosigmoidit,K513,K50-K52
+Pseudopolypos i tjocktarmen,K514,K50-K52
+Vänstersidig kolit,K515,K50-K52
+Annan specificerad ulcerös kolit,K518,K50-K52
+"Ulcerös kolit, ospecificerad",K519,K50-K52
+Gastroenterit och kolit orsakad av strålning,K520,K50-K52
+Toxisk gastroenterit och kolit,K521,K50-K52
+Allergisk och kostbetingad gastroenterit och kolit,K522,K50-K52
+Obestämbar kolit,K523,K50-K52
+Annan specificerad icke-infektiös gastroenterit och kolit,K528,K50-K52
+"Icke-infektiös gastroenterit och kolit, ospecificerad",K529,K50-K52
+Akuta kärlsjukdomar i tarmen,K550,K55-K64
+Kroniska kärlsjukdomar i tarmen,K551,K55-K64
+Angiodysplasi i kolon,K552,K55-K64
+Angiodysplasi i tunntarmen,K553,K55-K64
+Andra specificerade kärlsjukdomar i tarmen,K558,K55-K64
+"Kärlsjukdom i tarmen, ospecificerad",K559,K55-K64
+Paralytisk ileus,K560,K55-K64
+Invagination,K561,K55-K64
+Volvulus,K562,K55-K64
+Gallstensileus,K563,K55-K64
+Annan tilltäppning av tarmen,K564,K55-K64
+Adherensileus,K565,K55-K64
+Annan och ospecificerad obstruktion av tarmen,K566,K55-K64
+"Ileus, ospecificerad",K567,K55-K64
+Divertikel i tunntarmen med perforation och abscess,K570,K55-K64
+Divertikel i tunntarmen utan perforation eller abscess,K571,K55-K64
+Divertikel i tjocktarmen med perforation och abscess,K572,K55-K64
+Divertikel i tjocktarmen utan perforation eller abscess,K573,K55-K64
+Divertikel i både tunntarmen och tjocktarmen med perforation och abscess,K574,K55-K64
+Divertikel i både tunntarmen och tjocktarmen utan perforation eller abscess,K575,K55-K64
+"Divertikel i tarmen, ospecificerad lokalisation, med perforation och abscess",K578,K55-K64
+"Divertikel i tarmen, ospecificerad lokalisation, utan perforation eller abscess",K579,K55-K64
+Irritabel tarm som domineras av diarré [IBS-D],K581,K55-K64
+Irritabel tarm som domineras av förstoppning [IBS-C],K582,K55-K64
+Irritabel tarm med blandade tarmvanor [IBS-M],K583,K55-K64
+Annan och ospecificerad irritabel tarm,K588,K55-K64
+Obstipation (förstoppning),K590,K55-K64
+Funktionell diarré,K591,K55-K64
+Neurogen tarmrubbning som ej klassificeras på annan plats,K592,K55-K64
+Megakolon som ej klassificeras på annan plats,K593,K55-K64
+Analspasm,K594,K55-K64
+Andra specificerade funktionella tarmrubbningar,K598,K55-K64
+"Funktionell tarmsjukdom, ospecificerad",K599,K55-K64
+Akut analfissur,K600,K55-K64
+Kronisk analfissur,K601,K55-K64
+"Analfissur, ospecificerad",K602,K55-K64
+Analfistel,K603,K55-K64
+Rektalfistel,K604,K55-K64
+Anorektal fistel,K605,K55-K64
+Analabscess,K610,K55-K64
+Rektalabscess,K611,K55-K64
+Anorektal abscess,K612,K55-K64
+Ischiorektal abscess,K613,K55-K64
+Abscess i sfinktern,K614,K55-K64
+Analpolyp,K620,K55-K64
+Rektalpolyp,K621,K55-K64
+Analprolaps,K622,K55-K64
+Rektalprolaps,K623,K55-K64
+Stenos i anus och rektum,K624,K55-K64
+Blödning i anus och rektum,K625,K55-K64
+Sår i anus och rektum,K626,K55-K64
+Strålningsproktit,K627,K55-K64
+Andra specificerade sjukdomar i anus och rektum,K628,K55-K64
+"Sjukdom i anus och rektum, ospecificerad",K629,K55-K64
+Tarmabscess,K630,K55-K64
+Perforation (icke-traumatisk) av tarmen,K631,K55-K64
+Tarmfistel,K632,K55-K64
+Sår i tarmen,K633,K55-K64
+Enteroptos,K634,K55-K64
+Polyp i tjocktarmen,K635,K55-K64
+Andra specificerade sjukdomar i tarmen,K638,K55-K64
+"Sjukdom i tarmen, ospecificerad",K639,K55-K64
+Hemorrojder av första graden,K640,K55-K64
+Hemorrojder av andra graden,K641,K55-K64
+Hemorrojder av tredje graden,K642,K55-K64
+Hemorrojder av fjärde graden,K643,K55-K64
+Kvarvarande hemorrojdhudflikar,K644,K55-K64
+Perianal venös trombos,K645,K55-K64
+Andra specificerade hemorrojder,K648,K55-K64
+"Hemorrojder, ospecificerade",K649,K55-K64
+Akut peritonit,K650,K65-K67
+Annan specificerad peritonit,K658,K65-K67
+"Peritonit, ospecificerad",K659,K65-K67
+Peritoneala adherenser,K660,K65-K67
+Hemoperitoneum,K661,K65-K67
+Retroperitoneal fibros,K662,K65-K67
+Andra specificerade sjukdomar i peritoneum,K668,K65-K67
+"Sjukdom i peritoneum, ospecificerad",K669,K65-K67
+Klamydiaperitonit (A74.8),K670,K65-K67
+Gonokockperitonit (A54.8),K671,K65-K67
+Syfilitisk peritonit (A52.7),K672,K65-K67
+Tuberkulös peritonit (A18.3),K673,K65-K67
+Andra tillstånd i peritoneum vid infektionssjukdomar som klassificeras på annan plats,K678,K65-K67
+Alkoholfettlever,K700,K70-K77
+Alkoholhepatit,K701,K70-K77
+Leverfibros och leverskleros orsakad av alkohol,K702,K70-K77
+Levercirros orsakad av alkohol,K703,K70-K77
+Leversvikt orsakad av alkohol,K704,K70-K77
+"Leversjukdom orsakad av alkohol, ospecificerad",K709,K70-K77
+Toxisk leversjukdom med kolestas,K710,K70-K77
+Toxisk leversjukdom med levernekros,K711,K70-K77
+Toxisk leversjukdom med akut hepatit,K712,K70-K77
+Toxisk leversjukdom med kronisk persisterande hepatit,K713,K70-K77
+Toxisk leversjukdom med kronisk lobulär hepatit,K714,K70-K77
+Toxisk leversjukdom med kronisk aktiv hepatit,K715,K70-K77
+Toxisk leversjukdom med hepatit som ej klassificeras på annan plats,K716,K70-K77
+Toxisk leversjukdom med fibros och cirros i levern,K717,K70-K77
+Toxisk leversjukdom med andra specificerade sjukdomar i levern,K718,K70-K77
+"Toxisk leversjukdom, ospecificerad",K719,K70-K77
+Akut och subakut leversvikt,K720,K70-K77
+Kronisk leversvikt,K721,K70-K77
+"Leversvikt, ospecificerad",K729,K70-K77
+Kronisk persisterande hepatit som ej klassificeras på annan plats,K730,K70-K77
+Kronisk lobulär hepatit som ej klassificeras på annan plats,K731,K70-K77
+Kronisk aktiv hepatit som ej klassificeras på annan plats,K732,K70-K77
+Annan specificerad kronisk hepatit som ej klassificeras på annan plats,K738,K70-K77
+"Kronisk hepatit, ospecificerad",K739,K70-K77
+Leverfibros,K740,K70-K77
+Leverskleros,K741,K70-K77
+Leverfibros med leverskleros,K742,K70-K77
+Primär biliär cirros (PBC),K743,K70-K77
+Sekundär biliär cirros,K744,K70-K77
+"Biliär cirros, ospecificerad",K745,K70-K77
+Annan och ospecificerad levercirros,K746,K70-K77
+Leverabscess,K750,K70-K77
+Flebit i portavenen,K751,K70-K77
+Ospecifik reaktiv hepatit,K752,K70-K77
+Granulomatös hepatit som ej klassificeras på annan plats,K753,K70-K77
+Autoimmun hepatit,K754,K70-K77
+Andra specificerade inflammatoriska leversjukdomar,K758,K70-K77
+"Inflammatorisk leversjukdom, ospecificerad",K759,K70-K77
+Fettlever som ej klassificeras på annan plats,K760,K70-K77
+Kronisk staslever orsakad av hjärtsvikt,K761,K70-K77
+Central hemorragisk nekros i levern,K762,K70-K77
+Leverinfarkt,K763,K70-K77
+Leverpurpura,K764,K70-K77
+Veno-ocklusiv sjukdom i levern,K765,K70-K77
+Portahypertension,K766,K70-K77
+Hepatorenalt syndrom,K767,K70-K77
+Andra specificerade sjukdomar i levern,K768,K70-K77
+"Leversjukdom, ospecificerad",K769,K70-K77
+Leversjukdomar vid infektionssjukdomar och parasitsjukdomar som klassificeras på annan plats,K770,K70-K77
+Leversjukdomar vid andra sjukdomar som klassificeras på annan plats,K778,K70-K77
+Gallsten med akut kolecystit,K800,K80-K87
+Gallsten med annan kolecystit,K801,K80-K87
+Gallsten utan kolecystit,K802,K80-K87
+Koledokussten med kolangit,K803,K80-K87
+Koledokussten med kolecystit,K804,K80-K87
+Koledokussten utan kolangit eller kolecystit,K805,K80-K87
+Annan specificerad gallstenssjukdom,K808,K80-K87
+Akut kolecystit,K810,K80-K87
+Kronisk kolecystit,K811,K80-K87
+Annan specificerad kolecystit,K818,K80-K87
+"Kolecystit, ospecificerad",K819,K80-K87
+Avstängning av gallblåsan utan uppgift om gallsten,K820,K80-K87
+Hydrops i gallblåsan,K821,K80-K87
+Gallblåseperforation,K822,K80-K87
+Gallblåsefistel,K823,K80-K87
+Kolesterolos i gallblåsan,K824,K80-K87
+Andra specificerade sjukdomar i gallblåsan,K828,K80-K87
+"Sjukdom i gallblåsan, ospecificerad",K829,K80-K87
+Kolangit,K830,K80-K87
+Förträngning av gallgång,K831,K80-K87
+Perforation av gallgång,K832,K80-K87
+Gallgångsfistel,K833,K80-K87
+Kramp i sfinkter Oddi,K834,K80-K87
+Biliär cysta,K835,K80-K87
+Andra specificerade sjukdomar i gallvägarna,K838,K80-K87
+"Sjukdom i gallvägarna, ospecificerad",K839,K80-K87
+Idiopatisk akut pankreatit,K850,K80-K87
+Biliär akut pankreatit,K851,K80-K87
+Alkoholutlöst akut pankreatit,K852,K80-K87
+Läkemedelsutlöst akut pankreatit,K853,K80-K87
+Annan akut pankreatit,K858,K80-K87
+"Akut pankreatit, ospecificerad",K859,K80-K87
+Kronisk pankreatit orsakad av alkohol,K860,K80-K87
+Annan kronisk pankreatit,K861,K80-K87
+Pankreascysta,K862,K80-K87
+Pseudocysta i pankreas,K863,K80-K87
+Andra specificerade sjukdomar i pankreas,K868,K80-K87
+"Pankreassjukdom, ospecificerad",K869,K80-K87
+Förändringar i gallblåsan och gallvägarna vid sjukdomar som klassificeras på annan plats,K870,K80-K87
+Förändringar i pankreas vid sjukdomar som klassificeras på annan plats,K871,K80-K87
+Celiaki,K900,K90-K93
+Tropisk sprue,K901,K90-K93
+Blind loop syndrome som ej klassificeras på annan plats,K902,K90-K93
+Pankreatisk steatorré,K903,K90-K93
+Malabsorption orsakad av intolerans som ej klassificeras på annan plats,K904,K90-K93
+Annan intestinal malabsorption,K908,K90-K93
+"Intestinal malabsorption, ospecificerad",K909,K90-K93
+Kräkningar efter gastrointestinal kirurgi,K910,K90-K93
+Syndrom efter kirurgiska ingrepp på magsäcken,K911,K90-K93
+Postoperativ malabsorption som ej klassificeras på annan plats,K912,K90-K93
+Postoperativ intestinal obstruktion,K913,K90-K93
+Bristande funktion av kolostomi och enterostomi,K914,K90-K93
+Postkolecystektomisyndrom,K915,K90-K93
+Andra sjukdomar i matsmältningsorganen efter kirurgiska och medicinska ingrepp som ej klassificeras på annan plats,K918,K90-K93
+"Sjukdom i matsmältningsorganen efter kirurgiska och medicinska ingrepp, ospecificerad",K919,K90-K93
+Hematemes,K920,K90-K93
+Melena,K921,K90-K93
+"Gastrointestinal blödning, ospecificerad",K922,K90-K93
+Andra specificerade sjukdomar i matsmältningsorganen,K928,K90-K93
+"Sjukdom i matsmältningsorganen, ospecificerad",K929,K90-K93
+"Tuberkulösa sjukdomar i tarmar, peritoneum och mesenteriekörtlar (A18.3)",K930,K90-K93
+Megakolon vid Chagas sjukdom (B57.3),K931,K90-K93
+Förändringar i andra specificerade matsmältningsorgan vid sjukdomar som klassificeras på annan plats,K938,K90-K93
