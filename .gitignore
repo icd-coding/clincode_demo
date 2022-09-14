@@ -1,0 +1,6 @@
+# The file containing environment variables 
+venv
+
+# Ignore IDE specific files
+.idea/
+
