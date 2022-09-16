@@ -2,23 +2,26 @@
 @author: taridzo, 2022
 First version of a DEMO for clincode. It uses a fine-tuned model and flask for the view.
 '''
-import sys
+
 import numpy as np
 import pandas as pd
 from tqdm import tqdm
 from transformers import BertTokenizer
+import tensorflow as tf
 from tensorflow import keras
 from flask import Flask
 from flask import request
 from flask import render_template
 from bs4 import BeautifulSoup
-
-from demo_fuzzy_sentence import get_fuzzy_sentence_top_n
+import matplotlib.pyplot as plt
+from matplotlib import colors
+import demo_fuzzy_sentence as fz
 
 MODEL_NAME = "static/swedClinBert"
 icd_desc_f = 'static/icd/gastro_se_blk.csv'
 choices = pd.read_csv(icd_desc_f, sep=',', header=0)
 modelx = keras.models.load_model('static/model')
+modelx = tf.keras.Model(inputs=modelx.input, outputs=[modelx.output, modelx.get_layer('attention_vec').output])
 
 label_dict = ['K209', 'K210', 'K219', 'K222', 'K250', 'K251', 'K253', 'K259', 'K260', 'K261', 'K263', 'K279', 'K295',
               'K297', 'K298', 'K299', 'K309', 'K310', 'K317', 'K351', 'K352', 'K353', 'K358', 'K359', 'K369', 'K379',
@@ -36,32 +39,47 @@ tokenizer = BertTokenizer.from_pretrained(MODEL_NAME,
                                           max_length=MAX_LENGTH,
                                           pad_to_max_length=True)
 
+def colorize(words, color_array,cm):
+    cmap=cm
+    template = '<span style="white-space:normal;color: black; background-color: {}"> {} </span>'
+    colored_string = ''
+    norm = colors.Normalize(color_array.min(), color_array.max())
+    for word, color in zip(words, color_array):
+        color = colors.rgb2hex(cmap(norm(color))[:3])
+        colored_string += template.format(color, '&nbsp' + word + '&nbsp')
+    return colored_string
 
 def tokenize(sentences):
     input_ids, input_masks, input_segments = [], [], []
     for sentence in tqdm(sentences):
         inputs = tokenizer.encode_plus(sentence,
-                                       add_special_tokens=True,
+                                       add_special_tokens=False,
                                        max_length=MAX_LENGTH,
                                        pad_to_max_length=True,
                                        return_attention_mask=True,
-                                       return_token_type_ids=True,
+                                       return_token_type_ids=False,
                                        truncation=True)
         input_ids.append(inputs['input_ids'])
         input_masks.append(inputs['attention_mask'])
-        input_segments.append(inputs['token_type_ids'])
     return np.asarray(input_ids, dtype='int32'), np.asarray(input_masks, dtype='int32')
 
+def get_tokens_attention_weights(txt,weights):
+    txt = tokenizer.convert_ids_to_tokens(txt[0][0], skip_special_tokens=True)
+    txt = [t.replace('##', '') for t in txt]
+    weights = weights[0][:len(txt)]
+    return txt, weights
 
 def get_top_n(clinical_note):
-    if not isinstance(clinical_note, str): return []
-    if not clinical_note: return []
-    fuzzy_top_n = get_fuzzy_sentence_top_n(clinical_note, choices)
+    if not isinstance(clinical_note, str): return [],[],[]
+    if not clinical_note: return [],[],[]
+    fuzzy_top_n = fz.get_fuzzy_sentence_top_n(clinical_note, choices)
     clinical_note = tokenize([clinical_note])
-    y_test_probs = modelx.predict(clinical_note)
+    y_test_probs, attention_weights = modelx.predict(clinical_note)
     bert_top_n = [x for _, x in sorted(zip(y_test_probs[0], label_dict), key=lambda pair: pair[0], reverse=True)][:5]
 
-    return list(set(bert_top_n + fuzzy_top_n[:2]))
+    txt, weights = get_tokens_attention_weights(clinical_note,attention_weights)
+
+    return list(set(bert_top_n + fuzzy_top_n[:2])), txt, weights
 
 
 def get_finnkode():
@@ -84,6 +102,8 @@ def get_finnkode():
     return record
 
 
+
+
 app = Flask(__name__)
 
 
@@ -96,16 +116,23 @@ def index():
 def predict():
     if request.method == 'POST':
         clinical_note = request.form['notes']
-        top_n = get_top_n(clinical_note)
-        top_n_results = []
-        for icd_code in top_n:
-            icd_desc = choices.loc[choices.code == icd_code, 'description'].values[0]
-            top_n_results.append([icd_code, icd_code + ' | ' + icd_desc])
-
-        return render_template('icd.html',
-                               top_results=top_n_results,
-                               clinical_note=clinical_note,
-                               finnkode=get_finnkode())
-
+        if clinical_note:
+            top_n, txt, weights = get_top_n(clinical_note)
+            colour_coded_note = colorize(txt,weights, plt.cm.Reds)
+            top_n_results = []
+            icd_txt = []
+            for icd_code in top_n:
+                icd_desc = choices.loc[choices.code == icd_code, 'description'].values[0]
+                top_n_results.append([icd_code, icd_code + ' | ' + icd_desc])
+                icd_txt.append(icd_desc)
+            txt_fz, weights_fz = fz.get_fuzzy_colour(clinical_note, ' '.join([str(txt) for txt in icd_txt]))
+            colour_coded_fz = colorize(txt_fz, weights_fz, plt.cm.Blues)
+            return render_template('icd.html',
+                                   top_results=top_n_results,
+                                   clinical_note=clinical_note,
+                                   colour_coded_note=colour_coded_note,
+                                   colour_coded_fz=colour_coded_fz,
+                                   finnkode=get_finnkode())
+        return render_template('icd.html', finnkode=get_finnkode())
 
 app.run(debug=True, host='0.0.0.0', use_reloader=False)

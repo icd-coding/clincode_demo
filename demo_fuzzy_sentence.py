@@ -4,6 +4,7 @@ Fuzzy string matching based on sentence similarity.
 '''
 import sys
 from thefuzz import fuzz
+from thefuzz import process
 import pandas as pd
 from nltk.tokenize import sent_tokenize
 # nltk.download('punkt')
@@ -11,6 +12,7 @@ from nltk.corpus import stopwords
 from nltk.stem.snowball import SnowballStemmer
 import string
 from tqdm import tqdm
+import numpy as np
 
 tqdm.pandas()
 #import spacy
@@ -62,3 +64,24 @@ def get_top_n(letter, choices):
 def get_fuzzy_sentence_top_n(txt, df):
     df.description = df.description.str.lower()
     return get_top_n(str.lower(txt), df)
+
+
+def get_fuzzy_colour(clinical_note,icd_descriptions):
+    clinical_note = remove_stopwords(clinical_note)
+    clinical_note = remove_punctuation(clinical_note)
+    icd_descriptions = remove_stopwords(icd_descriptions)
+    icd_descriptions = remove_punctuation(icd_descriptions)
+    clinical_note = clinical_note.split(' ')
+    icd_descriptions = icd_descriptions.split(' ')
+    fuzzy_color = [process.extractOne(x, icd_descriptions)[1] for x in clinical_note]
+    return clinical_note, np.asarray(fuzzy_color)
+
+# clinical_note = "En 82-årig trombylbehandlad man inkommer akut med magsmärtor och ett förmodat lågt Hb. Genomgår 3/3 gastroskopi som visar dels en svårartad esofagit men även ett duodenalulcus. Mår emellertid bra. Ny kontroll av Hb visar cirka 110, mobiliseras, får äta och går hem med recept på trippelbehandling, fortsätter med Omeprazol minst en månad. Inget planerat återbesök."
+#
+# icd_descriptions = "akut pankreatit, ospecificerad divertikel i tjocktarmen utan perforation eller abscess divertikel i tjocktarmen med perforation och abscess gastroesofageal refluxsjukdom med esofagit tungsmärtor duodenit celiaki"
+#
+#
+# x,y = get_fuzzy_colour(clinical_note,icd_descriptions)
+#
+# print(x)
+# print(y)

@@ -106,6 +106,8 @@ ul {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+   word-break: break-all;
+  text-align:left;
 }
 
 #myNext {  background-color: #006666;
@@ -330,7 +332,10 @@ opacity: 0.4;
   cursor: pointer;
 }
 
+.container {
 
+font-size: 17px;
+}
 
 </style>
     <script src="static/js/jquery-3.6.1.js"></script>
@@ -354,21 +359,18 @@ opacity: 0.4;
 <p><h2>Gastro clinical note:</h2></p>
 
 <p style="font-size:120%;text-align:left;">{{ clinical_note }}</p>
-<br/><br/>
-
-   <!--
-<h1>Top-{{ top_results }} ICD-10 predictions:</h1>
-
-
-<h3>
-
-{% for ICD_code, Description in results_tab %}
-    <tr>
-        <td>{{ ICD_code }}</td>
-        <td>{{ Description }}</td> <br/>
-    </tr>
-{% endfor %}
--->
+<br/>
+<div class="container">
+        {% autoescape off %}
+{{colour_coded_note}}
+        {% endautoescape %}
+</div>
+<div class="container">
+        {% autoescape off %}
+{{colour_coded_fz}}
+        {% endautoescape %}
+</div>
+        <br/>
 
 <fieldset style="font-size:120%;text-align:left;">
     <legend><h3>Select correct code(s):</h3></legend>
