@@ -33,6 +33,7 @@ label_dict = ['K209', 'K210', 'K219', 'K222', 'K250', 'K251', 'K253', 'K259', 'K
               'K802', 'K803', 'K804', 'K805', 'K810', 'K819', 'K830', 'K831', 'K850', 'K851', 'K852', 'K858', 'K859',
               'K860', 'K861', 'K862', 'K863', 'K868', 'K900', 'K912', 'K913', 'K914', 'K920', 'K921', 'K922']
 
+
 MAX_LENGTH = 512
 tokenizer = BertTokenizer.from_pretrained(MODEL_NAME,
                                           add_special_tokens=True,
@@ -72,6 +73,7 @@ def get_tokens_attention_weights(txt,weights):
 def get_top_n(clinical_note):
     if not isinstance(clinical_note, str): return [],[],[]
     if not clinical_note: return [],[],[]
+
     fuzzy_top_n = fz.get_fuzzy_sentence_top_n(clinical_note, choices)
     clinical_note = tokenize([clinical_note])
     y_test_probs, attention_weights = modelx.predict(clinical_note)
