@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ url_for('static', filename= 'css/w3.css') }}">
@@ -360,11 +360,7 @@ font-size: 17px;
 
 <p style="font-size:120%;text-align:left;">{{ clinical_note }}</p>
 <br/>
-<div class="container">
-        {% autoescape off %}
-{{colour_coded_note}}
-        {% endautoescape %}
-</div>
+
 <div class="container">
         {% autoescape off %}
 {{colour_coded_fz}}
@@ -372,6 +368,7 @@ font-size: 17px;
 </div>
         <br/>
 
+        </br>
 <fieldset style="font-size:120%;text-align:left;">
     <legend><h3>Select correct code(s):</h3></legend>
     {% for icd,description  in top_results %}
@@ -396,6 +393,7 @@ font-size: 17px;
 
 </div>
 
+     <!-- <form action = "http://192.168.50.133:5000" method = "post"> -->
       <form action = "http://localhost:5000" method = "post">
           <p><h3>Tilbakemelding:</h3></p>
 <p><textarea type = "text" name = "notes" rows="5" cols="40" placeholder="If none of the suggested codes are correct, you can add codes or comments here..."></textarea></p>
