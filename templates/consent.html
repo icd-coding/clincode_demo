@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/w3.css') }}">
+    <style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Courier New', monospace;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 100%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: left;
+  background-color: #f1f1f1;
+  word-break:break-word;
+}
+
+
+/* ICD-10 code fuzzy search */
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('static/images/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+#myUL ul {
+  padding-left: 70px;
+}
+
+/* The container */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+   word-break: break-all;
+  text-align:left;
+}
+
+#myNext {  background-color: #006666;
+  color: white;}
+#myNext:hover {  background-color: #eee;
+  color: black;}
+
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #006666;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #006666;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #006666;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #006666;
+  color: white;
+}
+
+
+nav ul{max-height:500px; max-width:auto;}
+nav ul{overflow:hidden; overflow-y:scroll;}
+
+
+.rating {
+display: flex;
+flex-direction: row-reverse;
+justify-content: center;
+}
+
+.rating > input{
+ display:none;
+}
+
+.rating > label {
+position: relative;
+width: 0.7em;
+font-size: 7vw;
+color: #FFD700;
+cursor: pointer;
+}
+
+.rating > label::before{
+content: "\2605";
+position: absolute;
+opacity: 0;
+}
+
+.rating > label:hover:before,
+.rating > label:hover ~ label:before {
+opacity: 1 !important;
+}
+
+.rating > input:checked ~ label:before{
+opacity:1;
+}
+
+.rating:hover > input:checked ~ label:before{
+opacity: 0.4;
+ }
+
+
+  .tematiskGruppe, .kode
+  {
+	display: block;
+  }
+
+  .tematiskGruppe
+  {
+	margin-top: 20pt;
+  }
+
+  .kode
+  {
+	margin-top: 5pt;
+  }
+
+  .kode .kompakt
+  {
+	display: none;
+  }
+
+  .kodekode
+  {
+	display: block;
+	margin-left: 60pt;
+  }
+
+  .tematiskGruppe .inklusjon,
+  .tematiskGruppe .eksklusjon,
+  .tematiskGruppe .merknad,
+  .tematiskGruppe .underterm
+  {
+	display: block;
+	margin-left: 0pt;
+  }
+
+  .kode .inklusjon,
+  .kode .eksklusjon,
+  .kode .merknad,
+  .kode .underterm
+  {
+	display: block;
+	margin-left: 60pt;
+  }
+
+  .tittel, .hovedterm
+  {
+	margin-left: 5pt;
+  }
+
+  .gruppenr, .tittel, .kodenr, .hovedterm
+  {
+	font-weight: bold;
+  }
+
+  .gruppenr, .tittel
+  {
+	font-size: 16pt;
+  }
+
+  .gruppenr
+  {
+  	cursor: pointer;
+  }
+
+  .kodenr, .hovedterm
+  {
+	font-size: 12pt;
+  }
+
+  .kodenr
+  {
+	width: 55pt;
+	cursor: pointer;
+  }
+
+  img
+  {
+	border-style: none;
+  }
+
+  /*
+  .søketreff
+  {
+	background-color: #FFFF00;
+  }
+
+  .søketreff_synonym
+  {
+	background-color: #90EE90;
+  }
+
+  .søketreff_skrivefeil
+  {
+	background-color: #87CEFA;
+  }*/
+
+  ul
+  {
+	margin-top: 0;
+	margin-bottom: 0;
+  }
+
+  dt
+  {
+  font-weight: bold;
+  }
+
+  /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.container {
+
+font-size: 17px;
+}
+
+.myAccept {
+  background-color: #006666;
+  color: white;
+  width: 200px;
+    height: 50px;
+  border-color: green;
+  }
+.myAccept:hover {
+  background-color: #eee;
+  color: black;
+  }
+
+ .myAccept:active {
+  transform: translateY(4px);
+}
+
+.myDecline {
+  background-color: #FF0000;
+  color: white;
+  width: 200px;
+  height: 50px;
+  border-color: coral;
+  }
+.myDecline:hover {
+  background-color: #eee;
+  color: black;
+  }
+
+.myDecline:active {
+  transform: translateY(4px);
+}
+
+.parent {
+  padding: 1rem;
+}
+.child {
+  padding: 1rem;
+}
+
+.float-left-child {
+  float: left;
+}
+
+.inline-block-child {
+  display: inline-block;
+}
+
+</style>
+    <script>
+    function setCookie() {
+  document.cookie = cname + "=" + Date.now() + ";path=/";
+}
+    </script>
+    <script src="static/js/jquery-3.6.1.js"></script>
+    <script src="static/js/list.js"></script>
+    <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+    <title> Easy-ICD</title>
+</head>
+<body>
+
+<div class="topnav">
+
+  <a class="active" href="#home">
+      <img src="static/images/favicon.ico" alt="NSE">  Easy-ICD
+      </a>
+
+</div>
+
+<div class="container">
+  <div class="column">
+    <div class="card">
+
+        <div style="text-align:center">
+    <p><h2>
+        Are you interested in taking part in the research project
+    </p> </h2>
+</div>
+<div style="text-align:center">
+    <p> <h3>
+        ”ClinCode: Computer-Assisted Clinical Coding for improving efficiency
+        and quality in healthcare”?
+    </p> </h3>
+</div>
+<div>
+</div>
+<div>
+</div>
+<div>
+     </br>
+    <p>
+        This is an inquiry about participation in a research project where the
+        main purpose is to use AI to improve the quality of ICD-10 coding. In
+        this letter we will give you information about the purpose of the
+        project and what your participation will involve.
+    </p>
+</div>
+<div>
+</div>
+<div>
+        </br>
+    <p> <h3>
+        Purpose of the project
+    </p></h3>
+</div>
+<div>
+    <p>
+        This project has two broad objectives. First, this project aims to
+        increase clinical coding quality for Norwegian/Swedish clinical text by
+        matching current best systems for English.
+    </p>
+</div>
+<div>
+    <p>
+        Secondly, the project aims to help coders reduce the time required to
+        assign ICD-10 codes.
+    </p>
+</div>
+<div>
+</div>
+<div>
+        </br>
+    <p> <h3>
+        Who is responsible for the research project?
+    </p> </h3>
+</div>
+<div>
+    <p>
+        Norwegian Centre for E-health Research is the institution responsible
+        for the project.
+    </p>
+</div>
+<div>
+</div>
+<div>
+        </br>
+    <p> <h3>
+        Why are you being asked to participate?
+    </p> </h3>
+</div>
+<div>
+    <p>
+        You received this invitation because you agreed to be part of the
+        study. The selection criteria include someone working with (or who has
+        worked with) ICD-10 coding as a clinical coder or healthcare staff in
+        Norway or Sweden. The study will recruit up to 30 participants.
+    </p>
+</div>
+<div>
+</div>
+<div>
+        </br>
+    <p> <h3>
+        What does participation involve for you?
+    </p> </h3>
+</div>
+<div>
+    <p>
+        After you consent to participate, you will go through 30 clinical
+        texts. You will be randomly assigned a group, either the control or the
+        intervention. If you are assigned the control, you will go through all
+        the 30 clinical texts and assign appropriate ICD-codes. If you are
+        assigned the intervention group, you will go through 15 clinical texts
+        without the help of AI and then another 15 clinical texts with the help
+        of AI. The control group can also test the AI system at their own pace
+        once this study is complete.
+    </p>
+</div>
+<div>
+</div>
+
+<div>
+</div>
+<div>
+    <p> <mark>
+        The whole study is expected to be taken in one sitting -- no more
+        than one hour. As a participant, you will be compensated for the time
+        used (NOK 1000).
+        </mark>
+    </p>
+</div>
+<div>
+</div>
+<div>
+    <div>
+            </br>
+        <p> <h3>
+            Participation is voluntary
+    </p></h3>
+    </div>
+    <p>
+        Participation in the project is voluntary. If you chose to participate,
+        you can withdraw your consent at any time without giving a reason.
+        There will be no negative consequences for you if you chose not to
+        participate or quit during the experiment. All information about you is
+        anonymous, and will therefore not affect your work situation.
+    </p>
+</div>
+<div>
+</div>
+<div>
+    <div>
+            </br>
+        <p> <h3>
+            Your personal privacy – how we will store and use your personal
+            data
+        </p> </h3>
+    </div>
+    <div>
+        <p>
+            We will only use your personal data for the purpose(s) specified in
+            this information letter. We will process your personal data
+            confidentially and in accordance with data protection legislation
+            (the General Data Protection Regulation and Personal Data Act).
+        </p>
+    </div>
+    <div>
+        <ul>
+            <li>
+                <p>
+                    The experiment is completely anonymous. All data collected
+                    and published scientific articles do not tie back to you as
+                    a participant.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Researchers in the project will have access to the
+                    experiment data to perform analyses
+                </p>
+            </li>
+        </ul>
+    </div>
+    <div>
+    </div>
+</div>
+<div>
+     </br>
+    <p> <h3>
+        What will happen to your personal data at the end of the research
+        project?
+    </p> </h3>
+</div>
+<div>
+    <p>
+        The project is scheduled to end in March 2024. Since the collected data
+        is entirely anonymous, the data may be kept or deleted, at the
+        discretion of the project manager.
+    </p>
+</div>
+<div>
+</div>
+<div>
+     </br>
+    <p> <h3>
+        Your rights
+    </p> </h3>
+</div>
+<div>
+    <p>
+        So long as you can be identified in the collected data, you have the
+        right to:
+    </p>
+</div>
+<div>
+    <div>
+        <ul>
+            <li>
+                <p>
+                    access the personal data that is being processed about you
+                </p>
+            </li>
+            <li>
+                <p>
+                    request that your personal data is deleted
+                </p>
+            </li>
+            <li>
+                <p>
+                    request that incorrect personal data about you is
+                    corrected/rectified
+                </p>
+            </li>
+            <li>
+                <p>
+                    receive a copy of your personal data (data portability),
+                    and
+                </p>
+            </li>
+            <li>
+                <p>
+                    send a complaint to the Data Protection Officer or The
+                    Norwegian Data Protection Authority regarding the
+                    processing of your personal data
+                    <br/>
+                </p>
+            </li>
+        </ul>
+    </div>
+</div>
+<div>
+     </br>
+    <p> <h3>
+        What gives us the right to process your personal data?
+    </p> </h3>
+</div>
+<div>
+    <p>
+        We will not collect identifying or personal data during this
+        experiment. Only the session_id and clinical_note_id cookies are stored in the browser to keep track of the experiment. These cookies are deleted when you close the browser.
+    </p>
+</div>
+<div>
+</div>
+<div>
+     </br>
+    <p> <h3>
+        Where can I find out more?
+    </p> </h3>
+</div>
+<div>
+    <p>
+        If you have questions about the project, or want to exercise your
+        rights, contact:
+    </p>
+</div>
+<div>
+    <div>
+        <ul>
+            <li>
+                <p>
+                    Norwegian Centre for E-health Research via Professor
+                    Hercules Dalianis, hercules.dalianis@ehealthresearch.no.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Our Data Protection Officer: Øystein Hansen,
+                    oystein.hansen@ehealthresearch.no
+                </p>
+            </li>
+            <li>
+                <p>
+                    Data Protection Services, by email: (
+                    <a
+                        href="mailto:personverntjenester@sikt.no"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                    >
+                        personverntjenester@sikt.no
+                    </a>
+                    ) or by telephone: +47 53 21 15 00.
+                </p>
+            </li>
+        </ul>
+    </div>
+    <div>
+    </div>
+    <div>
+    </div>
+</div>
+<div>
+    </br>
+    <p>
+        Yours sincerely,
+    </p>
+</div>
+<div>
+</div>
+<div>
+</div>
+<div>
+    <p>
+        Professor Hercules Dalianis
+    </p>
+</div>
+<div>
+    <p>
+        (Project Manager)
+    </p>
+</div>
+<div>
+</div>
+<div>
+</div>
+<div>
+    <p>
+        ---------------
+    </p>
+</div>
+<div>
+    <p> <h3> Consent form
+        </h3>
+
+    </p>
+</div>
+<div>
+</div>
+<div>
+    <p>
+        I have received and understood information about the project ”ClinCode:
+        Computer-Assisted Clinical Coding for improving efficiency and quality
+        in healthcare” and have been given the opportunity to ask questions.
+    </p>
+</div>
+<div>
+</div>
+<div>
+</div>
+<div>
+    <p>
+        ---------------
+    </p>
+</div>
+
+<form action="/start" method = "post">
+
+    <p><h3> Approximate clinical coding experience: </h3></p>
+  <input type="radio" id="exp1" name="experience" value="exp: less than 1 year">
+  <label for="exp1"> Less than 1 year</label><br>
+      <br>
+  <input type="radio" id="exp2" name="experience" value="exp: 1-5 years">
+  <label for="exp2">1 – 5 years</label><br>
+      <br>
+  <input type="radio" id="exp3" name="experience" value="exp:more than 5 years">
+  <label for="exp3">More than 5 years</label>
+
+      <br>
+    <br><br>
+
+     <div class='parent'>
+          <div class='child inline-block-child'>
+              <p><input name = "consent" id="accept" class="myAccept inline-block-child" type = "submit" value = "Accept" style="font-size:120%;" /></p> </div>
+  <div class='child inline-block-child'>
+      <p><input name = "consent"  id="decline" class="myDecline inline-block-child" type = "submit" value = "Decline" style="font-size:120%;" /></p></div>
+     </div>
+</form>
+
+</div>
+</div>
+    </div>
+
+
+
+<script>
+
+var options = {
+  valueNames: [ 'code','tekst0','tekst1','tekst2','tekst3','tekst4','tekst5','tekst6','tekst7','tekst8','tekst9','tekst10','tekst11','tekst12','tekst13','tekst14','tekst15','tekst16' ],
+  fuzzySearch: {
+    searchClass: "fuzzy-search",
+    location: 0,
+    distance: 100,
+    threshold: 0.4,
+    multiSearch: true
+  }
+};
+
+var codeList = new List('icd-list', options);
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+
+    </div>
+  </div>
+  </div>
+   </body>
+</html>

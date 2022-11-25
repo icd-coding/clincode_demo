@@ -337,18 +337,61 @@ opacity: 0.4;
 font-size: 17px;
 }
 
+.myAccept {
+  background-color: #006666;
+  color: white;
+  width: 200px;
+    height: 50px;
+  border-color: green;
+  }
+.myAccept:hover {
+  background-color: #eee;
+  color: black;
+  }
+
+ .myAccept:active {
+  transform: translateY(4px);
+}
+
 </style>
+    <script>
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function checkCookie() {
+  let user = getCookie("session_id");
+  if (user != "") {
+    alert("Welcome again " + user);
+    document.getElementById("session_id").innerHTML = user;
+  }
+  }
+}
+</script>
     <script src="static/js/jquery-3.6.1.js"></script>
     <script src="static/js/list.js"></script>
     <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-    <title>Top-N ICD-10 predictions</title>
+    <title> Easy-ICD</title>
 </head>
 <body>
 
 <div class="topnav">
 
   <a class="active" href="#home">
-      <img src="static/images/favicon.ico" alt="NSE">
+      <img src="static/images/favicon.ico" alt="NSE">  Easy-ICD
       </a>
 
 </div>
@@ -356,48 +399,17 @@ font-size: 17px;
 <div class=class="container">
   <div class="column">
     <div class="card">
-<p><h2>Gastro clinical note:</h2></p>
+        <form action = "/predict" method = "post">
+
+<p><h2>Gastro clinical note: {{progress}}</h2></p>
 
 <p style="font-size:120%;text-align:left;">{{ clinical_note }}</p>
 <br/>
 
-<div class="container">
-        {% autoescape off %}
-{{colour_coded_fz}}
-        {% endautoescape %}
-</div>
-        <br/>
 
-        </br>
-<fieldset style="font-size:120%;text-align:left;">
-    <legend><h3>Select correct code(s):</h3></legend>
-    {% for icd,description  in top_results %}
-  <div>
-    <input type="checkbox" id="{{ icd }}" name="interest" value="{{ icd }}">
-    <label for="{{ icd }}">{{ description }} </label>
-  </div>
-{% endfor %}
-</fieldset>
-
-
-<br/>
-
- <h3>How useful were these suggestions?</h3>
-        <div class="rating">
-
-  <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
-  <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label>
-  <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label>
-  <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>
-  <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
-
-</div>
-
-     <!-- <form action = "http://192.168.50.133:5000" method = "post"> -->
-      <form action = "http://localhost:5000" method = "post">
-          <p><h3>Tilbakemelding:</h3></p>
-<p><textarea type = "text" name = "notes" rows="5" cols="40" placeholder="If none of the suggested codes are correct, you can add codes or comments here..."></textarea></p>
-<p><input id="myNext" class="button" type = "submit" value = "Next &raquo;" style="font-size:120%;" /></p>
+          <p><h3>Write possible codes and comments here:</h3></p>
+<p><textarea type = "text" name = "feedback" rows="5" cols="40" placeholder="Add ICD-10 codes and comments here..."></textarea></p>
+<p><input id="myNext" class="myAccept" type = "submit" value = "{{next_btn}} &raquo;" style="font-size:120%;" /></p>
 
       </form>
 

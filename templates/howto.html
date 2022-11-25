@@ -43,10 +43,21 @@
   background-color: #f1f1f1;
 }
 
-        #myNext {  background-color: #006666;
-  color: white;}
-#myNext:hover {  background-color: #eee;
-  color: black;}
+.myAccept {
+  background-color: #006666;
+  color: white;
+  width: 200px;
+  height: 50px;
+  border-color: green;
+  }
+.myAccept:hover {
+  background-color: #eee;
+  color: black;
+  }
+
+ .myAccept:active {
+  transform: translateY(4px);
+}
 
 /* Add a black background color to the top navigation */
 .topnav {
@@ -79,30 +90,36 @@
 
     </style>
     <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-    <title>Top-N ICD-10 predictions</title>
+    <title> Easy-ICD</title>
 </head>
 <body>
 
 <div class="topnav">
 
   <a class="active" href="#home">
-      <img src="static/images/favicon.ico" alt="NSE">
+      <img src="static/images/favicon.ico" alt="NSE">  Easy-ICD
       </a>
 </div>
 
 <div class=class="container">
   <div class="column">
     <div class="card">
-      <form action = "http://localhost:5000/predict" method = "post">
-        <!-- <form action = "http://192.168.50.133:5000/predict" method = "post"> -->
-          <p><h3>Enter gastro clinical note:</h3></p>
-<p><textarea type = "text" name = "notes" cols="80" rows="5" placeholder="Enter clinical note..."></textarea></p>
-<p><input id="myNext" class="button" type = "submit" value = "Submit" style="font-size:120%;" /></p>
+
+
+       <div class="container">
+        {% autoescape off %}
+{{intervention_help}}
+        {% endautoescape %}
+</div>
+
+
+      <form action = "/predict" method = "post">
+
+<p><input id="myNext" class="myAccept" type = "submit" value = "Start Coding" style="font-size:120%;" /></p>
 
       </form>
 
-        <p> En 82-årig trombylbehandlad man inkommer akut med magsmärtor och ett förmodat lågt Hb. Genomgår 3/3 gastroskopi som visar dels en svårartad esofagit men även ett duodenalulcus. Mår emellertid bra. Ny kontroll av Hb visar cirka 110, mobiliseras, får äta och går hem med recept på trippelbehandling, fortsätter med Omeprazol minst en månad. Inget planerat återbesök. </p>
-    </div>
+          </div>
   </div>
 </div>
    </body>

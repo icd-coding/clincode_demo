@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <script src="static/js/jquery-3.6.1.js"></script>
+    <script src="static/js/list.js"></script>
+    <style>
+    body {
+  font-family: 'Courier New', monospace;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 100%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+.myAccept {
+  background-color: #006666;
+  color: white;
+  width: 200px;
+  height: 50px;
+  border-color: green;
+  }
+.myAccept:hover {
+  background-color: #eee;
+  color: black;
+  }
+
+ .myAccept:active {
+  transform: translateY(4px);
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #006666;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #006666;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #006666;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #006666;
+  color: white;
+}
+
+
+    </style>
+    <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+    <title> Easy-ICD</title>
+</head>
+<body>
+
+<div class="topnav">
+
+  <a class="active" href="#home">
+      <img src="static/images/favicon.ico" alt="NSE">  Easy-ICD
+      </a>
+</div>
+
+<div class=class="container">
+  <div class="column">
+    <div class="card">
+
+        <img src='static/images/pass.png' alt='Thanks!' width="250" height="300">
+<br>
+        <br>
+        <h2>Thanks for participating in this study!</h2>
+
+    </div>
+  </div>
+</div>
+   </body>
+</html>
