@@ -46,3 +46,8 @@ sudo docker run -d --mount type=bind,source="/models/experiment_logs",target=/ap
 
 ```
 Experiment logs are available in experiment_logs
+
+# User study in ClinCode project
+The raw data from the logs generated in teh user study is in folder: user_study_results_data
+
+The related publication is found here: TODO:)
